@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Team Capstone Project",
+    "githubUrl": "https://github.com/lacheporter/Capstone.git"
   }
 }
