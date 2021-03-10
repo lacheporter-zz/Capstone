@@ -1,14 +1,18 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, Image, View, SafeAreaView } from "react-native";
 
 export default function App() {
+  const handlePress = () => console.log("I pressed it");
+  console.log(require("./assets/icon.png"));
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text>USC Visitors App</Text>
-      <Text>David, Sarah, Morice</Text>
+      <Text onPress={handlePress}>David, Sarah, Morice</Text>
+      <Image source={require("./assets/adaptive-icon.png")} />
+
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
