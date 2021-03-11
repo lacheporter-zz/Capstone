@@ -13,31 +13,45 @@ import {
 
 export default function App() {
   const handlePress = () => console.log("I pressed it");
-  console.log(require("./assets/icon.png"));
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text>USC Visitors App</Text>
-      <Text onPress={handlePress}>David, Sarah, Morice</Text>
-      <TouchableOpacity
-        onPress={() => console.log("hello")}
-        style={styles.homeImage}
-      >
+      <View style={{ top: 20, left: 20, position: "absolute" }}>
         <Image
-          source={require("./assets/undrawMap.png")}
+          source={require("./assets/menuIcon.svg")}
           style={{
-            height: 200,
-            width: 200,
+            height: 30,
+            width: 30,
           }}
         />
-      </TouchableOpacity>
-      <Button
-        color="maroon"
-        style={styles.button}
-        title="click me"
-        onPress={() => Alert.alert("Let's Get Started")}
-      />
-
-      <StatusBar style="auto" />
+      </View>
+      <View style={styles.viewStyle}>
+        <Text style={{ fontSize: "30px", fontWeight: "bold" }}>
+          USC Visitors Prototype
+        </Text>
+        <Text style={{ fontSize: "20px" }} onPress={handlePress}>
+          David, Sarah, Morice
+        </Text>
+      </View>
+      <View style={styles.homeImage}>
+        <TouchableOpacity>
+          <Image
+            source={require("./assets/CurrentLocation.svg")}
+            style={{
+              height: 200,
+              width: 200,
+            }}
+          />
+        </TouchableOpacity>
+      </View>
+      <View style={styles.viewStyle}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => alert("This is a test.")}
+        >
+          <Text style={styles.buttonText}> Click Me </Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }
@@ -53,9 +67,33 @@ const styles = StyleSheet.create({
     elevation: 4,
     shadowOffset: { width: 5, height: 5 },
     shadowColor: "grey",
-    shadowOpacity: 0.3,
-    shadowRadius: 10,
+    shadowOpacity: 0.5,
+    shadowRadius: 15,
     margin: "1rem",
-    padding: "1rem",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
+    paddingLeft: "1rem",
+    paddingRight: "1rem",
+    borderRadius: "50%",
+    overflow: "hidden",
+    border: "solid 4px grey",
+    backgroundColor: "white",
+  },
+
+  button: {
+    backgroundColor: "maroon",
+    padding: 15,
+    borderRadius: 50,
+  },
+
+  buttonText: {
+    color: "white",
+    textTransform: "uppercase",
+    fontWeight: "bold",
+  },
+
+  viewStyle: {
+    padding: 10,
+    justifyContent: "center",
   },
 });
