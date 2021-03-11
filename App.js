@@ -1,6 +1,15 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, Image, View, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  Image,
+  View,
+  SafeAreaView,
+  Button,
+  Alert,
+} from "react-native";
 
 export default function App() {
   const handlePress = () => console.log("I pressed it");
@@ -9,7 +18,24 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <Text>USC Visitors App</Text>
       <Text onPress={handlePress}>David, Sarah, Morice</Text>
-      <Image source={require("./assets/adaptive-icon.png")} />
+      <TouchableOpacity
+        onPress={() => console.log("hello")}
+        style={styles.homeImage}
+      >
+        <Image
+          source={require("./assets/undrawMap.png")}
+          style={{
+            height: 200,
+            width: 200,
+          }}
+        />
+      </TouchableOpacity>
+      <Button
+        color="maroon"
+        style={styles.button}
+        title="click me"
+        onPress={() => Alert.alert("Let's Get Started")}
+      />
 
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -22,5 +48,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  homeImage: {
+    elevation: 4,
+    shadowOffset: { width: 5, height: 5 },
+    shadowColor: "grey",
+    shadowOpacity: 0.3,
+    shadowRadius: 10,
+    margin: "1rem",
+    padding: "1rem",
   },
 });
