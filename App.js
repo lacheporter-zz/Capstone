@@ -21,7 +21,7 @@ export default function App() {
           source={require("./assets/menuIcon.svg")}
           style={{
             height: 30,
-            width: 30,
+            width: 40,
           }}
         />
       </View>
